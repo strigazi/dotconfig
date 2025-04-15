@@ -163,10 +163,10 @@ bar {
 #}
 
 # lock screen with $mod + Delete
-bindsym $mod+Delete exec --no-startup-id "i3lock -c ff0000"
+bindsym $mod+Delete exec --no-startup-id "i3lock -i /usr/share/backgrounds/f41/default/f41-01-night.png"
 
 # lock screen and suspend with $mod + End
-bindsym $mod+End exec --no-startup-id "i3lock -c ff0000 && systemctl suspend"
+bindsym $mod+End exec --no-startup-id "i3lock -i /usr/share/backgrounds/f41/default/f41-01-night.png && systemctl suspend"
 
 # Sreen brightness controls
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -202,13 +202,13 @@ exec --no-startup-id xinput set-prop "Synaptics TM3075-002" "libinput Tapping En
 # ebable natural scrolling
 exec --no-startup-id xinput set-prop "Synaptics TM3075-002" "libinput Natural Scrolling Enabled" 1
 
-exec --no-startup-id "~/.config/i3/keyboard.sh"
-exec --no-startup-id nm-applet
-exec --no-startup-id pasystray
-exec --no-startup-id blueman-applet
+exec_always --no-startup-id "~/.config/i3/keyboard.sh"
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id pasystray
+exec_always --no-startup-id blueman-applet
 
 bindsym $mod+Shift+o exec $HOME/.config/i3/dock.sh
-bindsym $mod+Shift+p exec $HOME/.config/i3/laptop.sh
+bindsym $mod+Shift+p exec "$HOME/.config/i3/kozani_desktop.sh && feh --bg-fill /usr/share/backgrounds/f41/default/f41-01-day.png"
 bindsym $mod+Shift+g exec $HOME/.config/i3/keyboard.sh
 
 # gnome-screenshot
